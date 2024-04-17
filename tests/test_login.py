@@ -30,4 +30,9 @@ class TestLogin():
 
         assert page.verify_login_with_empty_password()
 
+    def test_login_with_wrong_credentials(self, browser):
+        page = LoginPage(browser, self.url.base_url)
 
+        page.open()
+
+        assert page.verify_login_with_wrong_credentials()
